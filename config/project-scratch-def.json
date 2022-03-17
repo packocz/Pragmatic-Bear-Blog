@@ -1,0 +1,15 @@
+{
+	"orgName": "BearBlog",
+	"edition": "Developer",
+	"features": ["EnableSetPasswordInApi"],
+	"hasSampleData": false,
+	"language": "en_US",
+	"settings": {
+		"lightningExperienceSettings": {
+			"enableS1DesktopEnabled": true
+		},
+		"mobileSettings": {
+			"enableS1EncryptedStoragePref2": false
+		}
+	}
+}

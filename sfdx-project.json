@@ -1,0 +1,12 @@
+{
+	"packageDirectories": [
+		{
+			"path": "bear-blog",
+			"default": true
+		}
+	],
+	"name": "Pragmatic Bear Blog",
+	"namespace": "",
+	"sfdcLoginUrl": "https://login.salesforce.com",
+	"sourceApiVersion": "53.0"
+}
