@@ -1,0 +1,14 @@
+<template>
+    <div>
+        <lightning-input
+            read-only={disabled}
+            required={required}
+            label={label}
+            variant={variant}
+            field-level-help={helptext}
+            onchange={handleChange}
+            type={customFieldType}
+        ></lightning-input>
+    </div>
+    <slot class="slds-hide" onslotchange={handleSlotChange}></slot>
+</template>

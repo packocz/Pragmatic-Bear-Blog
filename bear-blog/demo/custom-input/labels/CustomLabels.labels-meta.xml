@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CustomDescriptionHelptext</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CustomDescriptionHelptext</shortDescription>
+        <value>Make sure to provide a description.</value>
+    </labels>
+    <labels>
+        <fullName>CustomEmailHelptext</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CustomEmailHelptext</shortDescription>
+        <value>Who to email when there is a problem</value>
+    </labels>
+    <labels>
+        <fullName>CustomEmailLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CustomEmailLabel</shortDescription>
+        <value>Main Contact</value>
+    </labels>
+</CustomLabels>

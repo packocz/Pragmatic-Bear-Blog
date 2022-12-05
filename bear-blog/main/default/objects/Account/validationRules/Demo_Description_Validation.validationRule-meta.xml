@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Description_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>LEN(Description) &lt; 10</errorConditionFormula>
+    <errorDisplayField>Description</errorDisplayField>
+    <errorMessage>Say a bit more please..</errorMessage>
+</ValidationRule>

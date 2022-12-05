@@ -1,0 +1,26 @@
+<template>
+    <div class={formDensityClass}>
+        <span class="slds-form-element__label">{label}</span>
+        <div class="slds-form-element__icon">
+            <button class="slds-button slds-button_icon" aria-describedby="help" type="button">
+                <svg class="slds-button__icon" aria-hidden="true">
+                    <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#info"></use>
+                </svg>
+                <span class="slds-assistive-text">{Label} Help</span>
+            </button>
+            <div
+                class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left"
+                role="tooltip"
+                id="help"
+                style="position: absolute; top: -60px; left: -16px; width: 170px"
+            >
+                <div class="slds-popover__body">{helptext}</div>
+            </div>
+        </div>
+        <div class="slds-form-element__control">
+            <lightning-formatted-text class="slds-form-element__static">{value}</lightning-formatted-text>
+            <slot name="visible"></slot>
+        </div>
+    </div>
+    <slot name="output-field" class="slds-hide" onslotchange={handleSlotChange}></slot>
+</template>

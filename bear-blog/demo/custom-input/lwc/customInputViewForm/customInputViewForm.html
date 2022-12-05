@@ -1,0 +1,57 @@
+<template>
+	<lightning-card title="Record Edit Form with Custom Input">
+		<lightning-spinner if:true={isLoading} alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+		<lightning-button
+			name="UpdateAccount"
+			label="Update Account"
+			onclick={handleUpdateAccount}
+			variant="brand"
+			slot="actions"
+		></lightning-button>
+		<lightning-record-edit-form
+			object-api-name="Account"
+			record-id={recordId}
+			onsuccess={handleSubmitSuccess}
+			onload={handleEditOnLoad}
+			onerror={handleSubmitError}
+		>
+			<div class="slds-grid">
+				<div class="slds-col slds-size_1-of-2">
+					<lightning-input-field field-name="Name" required></lightning-input-field>
+					<lightning-input-field field-name="AccountNumber" required></lightning-input-field>
+					<c-custom-input-field
+						field-name="Email__c"
+						data-field-name="Email__c"
+						label={labels.Email__c.label}
+						helptext={labels.Email__c.helptext}
+						custom-field-type="email"
+					>
+						<lightning-input-field field-name="Email__c"></lightning-input-field
+					></c-custom-input-field>
+				</div>
+				<div class="slds-col slds-size_1-of-2">
+					<lightning-input-field field-name="AccountSource" required></lightning-input-field>
+					<c-custom-input-field
+						field-name="Description"
+						data-field-name="Description"
+						label={labels.Description.label}
+						required="true"
+						helptext={labels.Description.helptext}
+						custom-field-type="textarea"
+					>
+						<lightning-input-field field-name="Description"></lightning-input-field
+					></c-custom-input-field>
+					<c-custom-input-field
+						field-name="Founded__c"
+						data-field-name="Founded__c"
+						label="Established"
+						helptext="When they started"
+						custom-field-type="date"
+					>
+						<lightning-input-field field-name="Founded__c"></lightning-input-field
+					></c-custom-input-field>
+				</div>
+			</div>
+		</lightning-record-edit-form>
+	</lightning-card>
+</template>
