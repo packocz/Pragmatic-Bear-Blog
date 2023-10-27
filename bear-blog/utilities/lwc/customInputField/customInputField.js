@@ -24,10 +24,10 @@ export default class CustomlightningInputField extends LightningElement {
 		if (this.isTextArea) {
 			this.customInput = this.template.querySelector('lightning-textarea');
 			this.customInput.value = this.lightningInputField.value;
-		} else if(this.isGeneric) {
+		} else if (this.isGeneric) {
 			this.customInput = this.template.querySelector('lightning-input');
 			this.customInput.value = this.lightningInputField.value;
-        }
+		}
 	}
 
 	@api
@@ -59,9 +59,9 @@ export default class CustomlightningInputField extends LightningElement {
 		if (this.isTextArea) {
 			return textArea;
 		}
-        if (this.isGeneric) {
-            return input;
-        }
+		if (this.isGeneric) {
+			return input;
+		}
 		return error;
 	}
 

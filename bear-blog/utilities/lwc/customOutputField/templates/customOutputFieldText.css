@@ -1,7 +1,7 @@
 .slds-popover_tooltip {
-    display: none;
+	display: none;
 }
 
 .slds-form-element__icon:hover .slds-popover_tooltip {
-    display: inline-block;
+	display: inline-block;
 }

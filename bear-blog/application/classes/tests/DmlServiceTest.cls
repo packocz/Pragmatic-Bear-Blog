@@ -1,6 +1,25 @@
 @IsTest
 private class DmlServiceTest {
 	@IsTest
+	static void mock() {
+		List<Lead> leads = new List<Lead>();
+		leads.add(new Lead(FirstName = 'FirstName', LastName = 'LastName', Company = 'Company'));
+
+		List<Database.SaveResult> ret = new List<Database.SaveResult>();
+
+		FlexibleMock mock = new FlexibleMock().mockMethodCall('databasePartialInsert', new List<Object>{ leads }, ret);
+
+		ClassFactory.setMock(DmlService.class, mock.stub(DmlService.class));
+
+		Test.startTest();
+
+		DmlService.newInstance().databasePartialInsert(leads, 'LeadsInsertTest');
+		//invoke logger
+
+		Test.stopTest();
+	}
+
+	@IsTest
 	static void insertRecorsSavesWhenSomeCauseErrors() {
 		List<Lead> leads = new List<Lead>();
 		leads.add(new Lead(FirstName = 'FirstName', LastName = 'LastName', Company = 'Company'));

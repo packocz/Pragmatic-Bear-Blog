@@ -148,7 +148,12 @@ public abstract with sharing class AsyncJob implements Queueable, Database.Batch
 			LoggingLevel.FINE,
 			String.format(
 				'AsyncJob executed as Platform Event AsyncJob__e: using {0}, records count: {1}, batch size: {2}; {3}',
-				new List<String>{ job.handlerClassName, String.valueOf(job.records.size()), String.valueOf(job.batchSize), String.valueOf(publishResult) }
+				new List<String>{
+					job.handlerClassName,
+					String.valueOf(job.records.size()),
+					String.valueOf(job.batchSize),
+					String.valueOf(publishResult)
+				}
 			)
 		);
 	}

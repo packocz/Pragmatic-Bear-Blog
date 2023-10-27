@@ -12,7 +12,7 @@ public with sharing class FakeId {
 	private static String buildFakeId(Schema.SObjectType sot, Integer length) {
 		String numberString = String.valueOf(counter++);
 		String prefix = sot.getDescribe().getKeyPrefix();
-        System.debug(prefix);
+		System.debug(prefix);
 		return prefix + '0'.repeat(length - prefix.length() - numberString.length()) + numberString;
 	}
 }

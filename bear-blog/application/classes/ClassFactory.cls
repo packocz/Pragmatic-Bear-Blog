@@ -13,17 +13,14 @@ public inherited sharing virtual class ClassFactory {
 		return requestedType.newInstance();
 	}
 
-    /**
-     * Can't be compiled without installing fflib packages
-    public static fflib_ISObjectUnitOfWork newUnitOfWorkInstance(List<SObjectType> sObjectList) {
-        // Mock implementation?
-        if (interfaceToMockImplementation.containsKey(fflib_ISObjectUnitOfWork.class)) {
-            return (fflib_ISObjectUnitOfWork) interfaceToMockImplementation.get(fflib_ISObjectUnitOfWork.class);
-        }
+	public static fflib_ISObjectUnitOfWork newUnitOfWorkInstance(List<SObjectType> sObjectList) {
+		// Mock implementation?
+		if (interfaceToMockImplementation.containsKey(fflib_ISObjectUnitOfWork.class)) {
+			return (fflib_ISObjectUnitOfWork) interfaceToMockImplementation.get(fflib_ISObjectUnitOfWork.class);
+		}
 
-        return new UnitOfWork(sObjectList);
-    }
-    */
+		return new UnitOfWork(sObjectList);
+	}
 
 	@TestVisible
 	private static void setMock(Type interfaceType, Object mockImplementation) {

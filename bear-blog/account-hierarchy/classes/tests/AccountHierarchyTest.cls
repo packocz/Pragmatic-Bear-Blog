@@ -5,7 +5,7 @@ private class AccountHierarchyTest {
 	private static List<Account> createAccounts(String name, String classification, Integer priority) {
 		List<Account> accs = new List<Account>();
 		for (Integer i = 0; i < 5; i++) {
-            Account a = new Account(Name = name + i, Classification__c = classification, Priority__c = priority);
+			Account a = new Account(Name = name + i, Classification__c = classification, Priority__c = priority);
 			accs.add(a);
 		}
 		return accs;

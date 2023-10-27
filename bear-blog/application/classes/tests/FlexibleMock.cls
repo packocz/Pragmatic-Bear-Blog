@@ -6,9 +6,9 @@ public class FlexibleMock implements System.StubProvider {
 		this.mockMethodAndArgumentResults = new Map<String, Map<Integer, Object>>();
 	}
 
-    public Object stub(Type mockedType) {
-        return Test.createStub(mockedType, this);
-    }
+	public Object stub(Type mockedType) {
+		return Test.createStub(mockedType, this);
+	}
 
 	public FlexibleMock mockMethodCall(String methodName, List<Object> argumentList, Object returnValue) {
 		Integer hashCode = argumentList.hashCode();
