@@ -4,6 +4,12 @@
 public inherited sharing virtual class ClassFactory {
 	private static Map<Type, Object> interfaceToMockImplementation = new Map<Type, Object>();
 
+	private static List<SObjectType> objectDependencyOrder = new List<SObjectType>{
+		Lead.SObjectType,
+		Account.SObjectType,
+		Contact.SObjectType
+	};
+
 	public static Object newInstance(Type requestedType) {
 		// Mock implementation?
 		if (interfaceToMockImplementation.containsKey(requestedType)) {
@@ -11,6 +17,10 @@ public inherited sharing virtual class ClassFactory {
 		}
 
 		return requestedType.newInstance();
+	}
+
+	public static fflib_ISObjectUnitOfWork newUnitOfWorkInstance() {
+		return newUnitOfWorkInstance(objectDependencyOrder);
 	}
 
 	public static fflib_ISObjectUnitOfWork newUnitOfWorkInstance(List<SObjectType> sObjectList) {
